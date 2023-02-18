@@ -3,7 +3,7 @@ openai.api_key = 'openai API keys'
 https://openai.com/
 
 取得id和access_token
-page_id = 'fb id'          
+page_id = 'fb id'
 facebook_access_token = 'fb access_token' 
 https://developers.facebook.com/
 
