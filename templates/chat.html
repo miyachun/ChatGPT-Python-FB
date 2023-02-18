@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<head>
+    <meta charset="UTF-8">
+    <title>OpenAI</title>
+</head>
+<body>
+    <div align="center">
+        <h1>ChatGPT_Python</h1>
+        {% if message %} <h1 style="width:300px;height:50px;background-color:rgb(128, 0, 83);font-size:30px;color: white;">{{ message }}</h1> {% endif %}
+        <hr />
+        <form method="post" onsubmit="submit.disabled=true">           
+          <textarea rows="4" cols="50" name="question" placeholder="搜尋文字:" id="question"></textarea>
+          <br>           
+          <textarea rows="4" cols="50" name="question01" placeholder="搜尋圖片:" id="question01"></textarea>
+          <br>
+          <input type="submit" style="width:200px;height:50px;background-color:rgb(128, 0, 83);font-size:30px;color: white;" name="submit_button" value="送出" id="submit" />
+      </form>
+      <hr /> 
+       <div id="loading" style="display:none; color:red"><b>等待回傳...</b></div>
+        {% if question %}
+        <div style="text-align: center"><b>chatGPT:</b>
+            <h2 id="res">{{ res }}</h2>
+        </div> 
+        <div style="text-align: center"><b>chatGPT:</b>
+            <img src={{ res01 }} alt="一張圖片">
+          </div>
+         {% endif %}
+    </div>
+    
+</body>
+<script>
+    let loading = document.getElementById('loading');
+    let form = document.querySelector('form');
+    form.addEventListener('submit', () => {
+        loading.style.display = 'block';
+    });
+</script>
+</html>
